@@ -60,6 +60,7 @@ if(LoggedIn()){
     $current_menu='';
     $arr_SubMenu = array();
     foreach($arrayLeftMenuList as $key => $menu_items){
+        //echo $arrayLeftMenuList[$key]['LeftMainMenu'];
 
         //echo $arrayLeftMenuList[$key]['LeftSubMenu'];
         if($current_menu==$arrayLeftMenuList[$key]['LeftMainMenu']){
@@ -67,11 +68,14 @@ if(LoggedIn()){
             $current_menu=$arrayLeftMenuList[$key]['LeftMainMenu'];
             $LeftMainMenu=$arrayLeftMenuList[$key]['LeftMainMenu'];
             echo "<li>";
-            if($arrayLeftMenuList[$key]['HaveSubMenus']!=1){
-               echo "<a href=\"#home\">".$LeftMainMenu."</a>";
+            if($arrayLeftMenuList[$key]['HaveSubMenus']==1){
+               //echo "<a href=\"#home\">".$LeftMainMenu."</a>";
+                echo $LeftMainMenu."<ul>";
             }
             else{
-                echo $LeftMainMenu."<ul>";
+                //echo $LeftMainMenu."<ul>";
+                echo 'dont have Submenus';
+                echo "<a href=\"#home\">".$LeftMainMenu."</a>";
             }
         }
         if(!in_array($arrayLeftMenuList[$key]['LeftSubMenu'], $arr_SubMenu)){
@@ -80,9 +84,9 @@ if(LoggedIn()){
             echo "<li><a href=".base_url($arrayLeftMenuList[$key]['FormCIPath']).">".$arrayLeftMenuList[$key]['LeftSubMenu']."</a></li>";
         }
         else{
-            if($arrayLeftMenuList[$key]['HaveSubMenus']==1){
+            //if($arrayLeftMenuList[$key]['HaveSubMenus']==1){
             echo "</ul></li>";
-            }
+            //}
         }
     }
 
@@ -116,7 +120,7 @@ else {
 
     <script>
         $(document).ready(function(e){
-            $("#panelbar").kendoPanelBar({
+            $("#panelbar1").kendoPanelBar({
                 expandMode: "single"
             });
             function onClick(){
