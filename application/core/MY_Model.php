@@ -20,6 +20,20 @@ class MY_Model extends CI_Model {
         }
         return $result;
     }
+
+    function get_by($columns, $table, $where=array(), $single=FALSE ){
+        $this->db->select($columns);
+        $this->db->from($table);
+        $this->db->where($where);
+        $q = $this->db->get();
+        $result = $q->result_array();
+        if($single) {
+            return $result[0];
+        }
+
+        return $result;
+    }
+
     function insert($table,$data) {
         $this->db->insert($table,$data);
         $InsertedID=$this->db->insert_id();

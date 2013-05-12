@@ -6,26 +6,113 @@
  * Time: 5:48 PM
  * To change this template use File | Settings | File Templates.
  */
+$SelectedNavBarLink = 'Home';
+//This will Check to which Group User Belongs To.
+if(LoggedIn()){
+
+    //Get the UserID from The Session
+    $where= array(
+     'UserID' =>   $this->session->userdata('UserID')
+    );
+    $columns='GroupID';
+    //Getting the Group for the Specific User
+    $data = $this->CommonModel->get_by($columns,'pbs_users', $where, TRUE);
+    $UserGroup = $data['GroupID'];
+
+    //Get The Forms Related To The User Group
+    $columns='*';
+    $PTable='pbs_formsingroups';
+    $joins=array(
+        array(
+            'table' => 'pbs_forms',
+            'condition' => 'pbs_formsingroups.FormID = pbs_forms.FormID',
+            'joinType' => 'INNER'
+        )
+    );
+    $where=array(
+        'GroupID' => $UserGroup
+    );
+    $GetForms=$this->CommonModel->get_by_join($columns,$PTable,$joins,$where);
+
+    foreach($GetForms as $key => $row){
+        list($NavBar, $MainMenu, $SubMenu) = explode("/", $row['FormPath']);
+        $arrayLeftMenuList = array();
+        $arrayLeftMenuList[$key]['NavBarMenuLink'] = $NavBar;
+        $arrayLeftMenuList[$key]['LeftMainMenu'] = $MainMenu;
+        $arrayLeftMenuList[$key]['LeftSubMenu'] = $SubMenu;
+        $arrayLeftMenuList[$key]['FormCIPath'] = $row['FormCIPath'];
+        $arrayLeftMenuList[$key]['MainMenu_OrderNo'] = $row['Order_MainMenu_No'];
+        $arrayLeftMenuList[$key]['SubMenu_OrderNo'] = $row['Order_SubMenu_No'];
+        $arrayLeftMenuList[$key]['HaveSubMenus'] = $row['SubMenu'];
+    }
+
+    //This will Unset all the menus which do not belong to the selected Nav Bar Link.
+    foreach($arrayLeftMenuList as $key => $menu_items){
+        if($arrayLeftMenuList[$key]['NavBarMenuLink']!= $SelectedNavBarLink){
+            unset($arrayLeftMenuList[$key]);
+        }
+    }
+?>
+
+<?php
+    //Now It is the time to show the Links to The User..
+   echo "<ul id=\"panelbar\">";
+    $current_menu='';
+    $arr_SubMenu = array();
+    foreach($arrayLeftMenuList as $key => $menu_items){
+        if($current_menu==$arrayLeftMenuList[$key]['LeftMainMenu']){
+        }else{
+            $current_menu=$arrayLeftMenuList[$key]['LeftMainMenu'];
+            $LeftMainMenu=$arrayLeftMenuList[$key]['LeftMainMenu'];
+            echo "<li>";
+            if($arrayLeftMenuList[$key]['HaveSubMenus']!=1){
+               echo "<a href=\"#home\">".$LeftMainMenu."</a>";
+            }
+            else{
+                echo $LeftMainMenu;
+            }
+
+        }
+        if(!in_array($arrayLeftMenuList[$key]['LeftSubMenu'], $arr_SubMenu)){
+            $arr_SubMenu[] = $arrayLeftMenuList[$key]['LeftSubMenu'];
+            $LeftSubMenu = $arrayLeftMenuList[$key]['LeftSubMenu'];
+            echo "<ul>
+            <li><a href=".base_url($arrayLeftMenuList[$key]['FormCIPath']).">".$LeftSubMenu."</a></li>";
+        }
+        else{
+            if($arrayLeftMenuList[$key]['HaveSubMenus']==1){
+            echo "</ul>";
+            }
+        }
+    }
+
+echo "</ul>";
+}
+else {
+    ?>
+    <ul id="panelbar">
+        <li class="k-state-active"><a href="#home">Home</a></li>
+        <li>
+            Search
+            <ul>
+                <li><a href="#PrizeBondSearch">Prize Bond Search</a></li>
+                <li><a href="#SearchUsers">Users</a></li>
+            </ul>
+        </li>
+        <li>
+            Profile
+            <ul>
+                <li>Update Profile</li>
+                <li>ChangePassword</li>
+            </ul>
+        </li>
+    </ul>
+<?php
+}
 ?>
 
 
-<ul id="panelbar">
-    <li class="k-state-active"><a href="#home">Home</a></li>
-    <li>
-        Search
-        <ul>
-            <li><a href="#PrizeBondSearch">Prize Bond Search</a></li>
-            <li><a href="#SearchUsers">Users</a></li>
-        </ul>
-    </li>
-    <li>
-        Profile
-        <ul>
-            <li>Update Profile</li>
-            <li>ChangePassword</li>
-        </ul>
-    </li>
-</ul>
+
 
     <script>
         $(document).ready(function(e){
