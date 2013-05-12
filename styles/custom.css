@@ -1,0 +1,51 @@
+body{
+    background: url('imgs/patterns/fabric.png') repeat;
+}
+.logoBlock{
+    display: block;
+    min-height: 120px;
+    margin: 10px 0px;
+}
+.logoBlock span{
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+}
+.logoBlock span img{
+    width: 250px;
+    height: auto;
+}
+.k-block{
+    height: 100%;
+}
+.span9{
+    width: 78.4681% !important;
+}
+.HeaderBlack{
+    background: url("imgs/patterns/header.jpg") repeat scroll 0 0 transparent !important;
+    color: #FFFFFF;
+    font-size: 18px;
+    height: 30px;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-top: -2px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.PageHeading{
+    margin-left: 10px;
+}
+
+/*style foreignObject Forms */
+label{
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: text-top;
+}
+
+.FormElementsStyle{
+    margin-left: 120px;
+}
+textarea, select, input{
+    width: 60%;
+    margin-top: 3px;
+}
