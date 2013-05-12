@@ -36,7 +36,7 @@ if(LoggedIn()){
 
     foreach($GetForms as $key => $row){
         list($NavBar, $MainMenu, $SubMenu) = explode("/", $row['FormPath']);
-        $arrayLeftMenuList = array();
+        $arrayLeftMenuList[$key] = array();
         $arrayLeftMenuList[$key]['NavBarMenuLink'] = $NavBar;
         $arrayLeftMenuList[$key]['LeftMainMenu'] = $MainMenu;
         $arrayLeftMenuList[$key]['LeftSubMenu'] = $SubMenu;
@@ -60,6 +60,8 @@ if(LoggedIn()){
     $current_menu='';
     $arr_SubMenu = array();
     foreach($arrayLeftMenuList as $key => $menu_items){
+
+        //echo $arrayLeftMenuList[$key]['LeftSubMenu'];
         if($current_menu==$arrayLeftMenuList[$key]['LeftMainMenu']){
         }else{
             $current_menu=$arrayLeftMenuList[$key]['LeftMainMenu'];
@@ -69,19 +71,17 @@ if(LoggedIn()){
                echo "<a href=\"#home\">".$LeftMainMenu."</a>";
             }
             else{
-                echo $LeftMainMenu;
+                echo $LeftMainMenu."<ul>";
             }
-
         }
         if(!in_array($arrayLeftMenuList[$key]['LeftSubMenu'], $arr_SubMenu)){
             $arr_SubMenu[] = $arrayLeftMenuList[$key]['LeftSubMenu'];
             $LeftSubMenu = $arrayLeftMenuList[$key]['LeftSubMenu'];
-            echo "<ul>
-            <li><a href=".base_url($arrayLeftMenuList[$key]['FormCIPath']).">".$LeftSubMenu."</a></li>";
+            echo "<li><a href=".base_url($arrayLeftMenuList[$key]['FormCIPath']).">".$arrayLeftMenuList[$key]['LeftSubMenu']."</a></li>";
         }
         else{
             if($arrayLeftMenuList[$key]['HaveSubMenus']==1){
-            echo "</ul>";
+            echo "</ul></li>";
             }
         }
     }
