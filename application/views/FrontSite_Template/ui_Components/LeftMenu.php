@@ -74,7 +74,7 @@ if(LoggedIn()){
             echo $arrayLeftMenuList[$key]['LeftMainMenu'];
         }
     }
-   echo "<ul id=\"panelbar\">";
+   echo "<ul id=\"panelbar1\">";
    // print_r($arrayLeftMenuList);exit();
 
     foreach($arrayLeftMenuList as $key => $menu_items){
