@@ -53,7 +53,7 @@ if(LoggedIn()){
         $arrayLeftMenuList[$key]['HaveSubMenus'] = $row['SubMenu'];
     }
 
-     //This will Unset all the menus which do not belong to the selected Nav Bar Link.
+    //This will Unset all the menus which do not belong to the selected Nav Bar Link.
     foreach($arrayLeftMenuList as $key => $menu_items){
         if($arrayLeftMenuList[$key]['NavBarMenuLink']!= $SelectedNavBarLink){
             unset($arrayLeftMenuList[$key]);
@@ -62,21 +62,11 @@ if(LoggedIn()){
 ?>
 
 <?php
-
     //Now It is the time to show the Links to The User..
+   echo "<ul id=\"panelbar\">";
     $current_menu='';
     $arr_SubMenu = array();
-    asort($arrayLeftMenuList);
-    foreach($arrayLeftMenuList as $key => $menu_items){
-        //echo $arrayLeftMenuList[$key]['LeftMainMenu'];
-        if($current_menu!=$arrayLeftMenuList[$key]['LeftMainMenu']){
-            $current_menu=$arrayLeftMenuList[$key]['LeftMainMenu'];
-            echo $arrayLeftMenuList[$key]['LeftMainMenu'];
-        }
-    }
-   echo "<ul id=\"panelbar\">";
    // print_r($arrayLeftMenuList);exit();
-
     foreach($arrayLeftMenuList as $key => $menu_items){
 
         //echo $arrayLeftMenuList[$key]['LeftSubMenu'];
