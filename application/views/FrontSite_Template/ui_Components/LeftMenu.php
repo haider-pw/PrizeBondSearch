@@ -65,23 +65,20 @@ if(LoggedIn()){
 
     //Now It is the time to show the Links to The User..
     $current_menu='';
+    $current_MainMenu='';
     $arr_SubMenu = array();
+    $arr_SubMenuForEach = array();
     asort($arrayLeftMenuList);
-    foreach($arrayLeftMenuList as $key => $menu_items){
-        //echo $arrayLeftMenuList[$key]['LeftMainMenu'];
-        if($current_menu!=$arrayLeftMenuList[$key]['LeftMainMenu']){
-            $current_menu=$arrayLeftMenuList[$key]['LeftMainMenu'];
-            echo $arrayLeftMenuList[$key]['LeftMainMenu'];
-        }
-    }
    echo "<ul id=\"panelbar1\">";
    // print_r($arrayLeftMenuList);exit();
+    $MenuEnd="";
 
     foreach($arrayLeftMenuList as $key => $menu_items){
-
-        //echo $arrayLeftMenuList[$key]['LeftSubMenu'];
+        $current_MainMenu=$arrayLeftMenuList[$key]['LeftMainMenu'];
         if($current_menu==$arrayLeftMenuList[$key]['LeftMainMenu']){
+            $NewMenuGenerated=FALSE;
         }else{
+            $NewMenuGenerated=TRUE;
             $current_menu=$arrayLeftMenuList[$key]['LeftMainMenu'];
             $LeftMainMenu=$arrayLeftMenuList[$key]['LeftMainMenu'];
             echo "<li>";
@@ -96,15 +93,24 @@ if(LoggedIn()){
             if(!in_array($arrayLeftMenuList[$key]['LeftSubMenu'], $arr_SubMenu)){
                 $arr_SubMenu[] = $arrayLeftMenuList[$key]['LeftSubMenu'];
                 $LeftSubMenu = $arrayLeftMenuList[$key]['LeftSubMenu'];
+
                 echo "<li><a href=".base_url($arrayLeftMenuList[$key]['FormCIPath']).">".$arrayLeftMenuList[$key]['LeftSubMenu']."</a></li>";
-                echo "</ul></li>";
+                if($NewMenuGenerated==TRUE && $arrayLeftMenuList[$key]['LeftMainMenu']!=$arrayLeftMenuList[0]['LeftMainMenu']){
+                    echo "</ul></li>";
+                    //echo 'Executed';
+                }
+
+                //echo "</ul></li>";
             }
+
+                //echo "</ul></li>";
+
+
         }
-//        else{
-//            if($arrayLeftMenuList[$key]['HaveSubMenus']==1){
-//                echo "</ul>";
-//            }
-//        }
+        else{
+            echo "</li>";
+        }
+
     }
 
 echo "</ul>";
