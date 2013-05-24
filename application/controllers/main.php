@@ -26,6 +26,9 @@ class Main extends Frontend_Controller {
     function Register(){
         $this->load->view('UserRegistration');
     }
+    function PrizeDetails(){
+        $this->load->view('PrizeDetails');
+    }
 
     //This Below Function will check for that if username exists.
     //This Below Function needs little Editing, after editing please remove this comment line.

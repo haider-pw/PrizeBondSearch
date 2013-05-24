@@ -44,6 +44,7 @@ $route['main/(:any)'] = "main/$1";
 $route['virtualvault'] = 'virtualvault/index';
 $route['virtualvault/(:any)'] = "virtualvault/$1";
 $route['ManageUsers/(:any)'] = "ManageUsers/$1";
+$route['admin'] = 'admin/Dashboard/index';
 
 
 //This is the last line; the order is important

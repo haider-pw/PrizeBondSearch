@@ -12,8 +12,13 @@
         <ul class="nav">
             <li class="active"><a href="#home">Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a href="#register">Join US</a></li>
+<?php
+if($this->CommonModel->loggedin()==TRUE){
+    ?>
+    <li><a href="#VirtualVault">Virtual Vault</a></li>
             <li class="divider-vertical"></li>
+<?php }
+?>
             <li><a href="#PrizeDetails">Prizes Detail</a></li>
             <li class="divider-vertical"></li>
             <li><a href="#DrawShedule">Draw Shedule</a></li>

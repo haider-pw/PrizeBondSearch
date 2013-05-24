@@ -10,7 +10,7 @@
 class PrizeBondSearch_Model extends CI_Model{
 
     function ShowAllPBS(){
-       $query = $this->db->query('Select * from PrizeBond');
+       $query = $this->db->query('Select * from pbs_prizebonds');
         return $query->result();
     }
 

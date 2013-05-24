@@ -9,13 +9,13 @@ if($this->CommonModel->loggedin()!=TRUE){
     </div>
 </li>
 <li class="divider-vertical"></li>
-<li class="pull-right"><a href="#register">Sign Up</a></li>
+<li class="pull-right"><a href="<?php echo base_url() ?>#register">Sign Up</a></li>
 
 <?php
 }
 else{?>
 
-<li class="logout"><a href="#ManageUsers/logout">Logout</a></li>
+<li class="logout"><a href="<?php echo base_url() ?>#ManageUsers/logout">Logout</a></li>
 <?php
 }
 ?>

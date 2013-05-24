@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 ?>
-<form action="ManageUsers/login" id="UserLoginForm" method="POST" accept-charset="UTF-8">
+<form action="<?php echo base_url() ?>ManageUsers/login" id="UserLoginForm" method="POST" accept-charset="UTF-8">
     <input id="user_username" placeholder="Username Here" style="margin-bottom: 15px; width:90%;" type="text" name="Username" />
     <input id="user_password" placeholder="Password Here" style="margin-bottom: 15px; width:90%;" type="password" name="Password" />
     <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="RememberMe" value="1" />
