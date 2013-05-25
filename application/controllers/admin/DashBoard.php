@@ -17,7 +17,7 @@ class DashBoard extends CI_Controller {
     }
 
     	public function index() {
-            $this->load->view('Admin_Views/CreateNewDraw');
+            $this->load->view('Admin_Views/Main');
         }
 
         function SetNewDraw(){

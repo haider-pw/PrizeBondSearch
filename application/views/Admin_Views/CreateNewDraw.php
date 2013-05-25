@@ -8,7 +8,7 @@
  */
 
 // Change the css classes to suit your needs
-echo $this->load->view('Admin_Views/u_templates/header');
+echo $this->load->view('Admin_Views/ui_templates/header');
 $attributes = array('class' => '', 'id' => '');
 echo form_open('/admin/DashBoard/SetNewDraw', $attributes); ?>
 
@@ -72,5 +72,5 @@ echo form_open('/admin/DashBoard/SetNewDraw', $attributes); ?>
     });
 </script>
 <?php
-$this->load->view('Admin_views/u_templates/footer')
+$this->load->view('Admin_views/ui_templates/footer')
 ?>
