@@ -69,7 +69,7 @@ if(LoggedIn()){
     $arr_SubMenu = array();
     $arr_SubMenuForEach = array();
     asort($arrayLeftMenuList);
-   echo "<ul id=\"panelbar1\">";
+   echo "<ul id=\"panelbar\">";
    // print_r($arrayLeftMenuList);exit();
     $MenuEnd="";
 
@@ -99,12 +99,7 @@ if(LoggedIn()){
                     echo "</ul></li>";
                     //echo 'Executed';
                 }
-
-                //echo "</ul></li>";
             }
-
-                //echo "</ul></li>";
-
 
         }
         else{
