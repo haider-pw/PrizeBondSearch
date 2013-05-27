@@ -49,3 +49,13 @@ textarea, select, input{
     width: 60%;
     margin-top: 3px;
 }
+.user-info-box{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 10px 10px 10px 10px;
+    display: inline-block;
+    float: right;
+    margin-right: 40px;
+    margin-top: 35px;
+    min-width: 220px;
+    padding: 10px;
+}

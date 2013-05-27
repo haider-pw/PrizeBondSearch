@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="index.html">Metis</a>
+            <a class="brand" href="index.html">PBS Admin</a>
             <!-- .topnav -->
             <div class="btn-toolbar topnav">
                 <div class="btn-group">
@@ -53,20 +53,18 @@
             <div class="nav-collapse collapse">
                 <!-- .nav -->
                 <ul class="nav">
-                    <li class="active"><a href="index.html">Dashboard</a></li>
-                    <li><a href="table.html">Tables</a></li>
-                    <li><a href="file.html">File Manager</a></li>
+                    <li class="active"><a href="index.html">System</a></li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            Form Elements <b class="caret"></b>
+                            Users <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="form-general.html">General</a></li>
-                            <li><a href="form-validation.html">Validation</a></li>
-                            <li><a href="form-wysiwyg.html">WYSIWYG</a></li>
-                            <li><a href="form-wizard.html">Wizard &amp; File Upload</a></li>
+                            <li><a href="form-general.html">Manage Users</a></li>
+                            <li><a href="form-validation.html">User Groups</a></li>
+                            <li><a href="form-wysiwyg.html">User Permissions</a></li>
                         </ul>
                     </li>
+                    <li><a href="file.html">Components</a></li>
                 </ul>
                 <!-- /.nav -->
             </div>

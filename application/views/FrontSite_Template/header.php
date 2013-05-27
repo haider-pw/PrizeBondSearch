@@ -43,21 +43,17 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
-        <div class="row">
-            <div class="span9">
+        <div class="row" style="margin-left:0px;">
+            <div style="display:inline-block;">
                 <div class="logoBlock">
             <span class="logo">
                 <img src="<?php echo base_url('styles/imgs/logo.png'); ?>" alt="">
             </span>
                 </div>
             </div>
-            <div class="span2">
-                <section>
-                <?php echo anchor('pakistanihaider@gmail.com','<i class="icon-user"></i> Syed Haider Hassan<br />');?>
-                <?php echo anchor('','<i class="icon-wrench"></i> Settings<br />'); ?>
-                <?php echo anchor('','<i class="icon-off"></i> Logout')?>
-                </section>
-            </div>
+            <?php //User Info Box
+            $this->load->view('FrontSite_Template/ui_Components/user-info-box');
+            ?>
         </div>
 
 

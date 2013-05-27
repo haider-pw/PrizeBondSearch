@@ -18,13 +18,14 @@
             <li><a href="alterne.html"><i class="icon-angle-right"></i> Alternative Style</a></li>
         </ul>
     </li>
+
     <li class="accordion-group ">
         <a data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-            <i class="icon-tasks icon-large"></i> Components <span class="label label-inverse pull-right">2</span>
+            <i class="icon-group icon-large"></i> Manage Users <span class="label label-inverse pull-right">2</span>
         </a>
         <ul class="collapse " id="component-nav">
-            <li><a href="icon.html"><i class="icon-angle-right"></i> Icon & Button</a></li>
-            <li><a href="progress.html"><i class="icon-angle-right"></i> Progress</a></li>
+            <li><a href="icon.html"><i class="icon-angle-right"></i> Create New User</a></li>
+            <li><a href="progress.html"><i class="icon-angle-right"></i> List Users</a></li>
         </ul>
     </li>
     <li class="accordion-group ">
