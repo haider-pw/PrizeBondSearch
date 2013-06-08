@@ -13,7 +13,7 @@
             <li class="active"><a href="#home">Home</a></li>
             <li class="divider-vertical"></li>
 <?php
-if($this->CommonModel->loggedin()==TRUE){
+if($this->common_model->loggedin()==TRUE){
     ?>
     <li><a href="#VirtualVault">Virtual Vault</a></li>
             <li class="divider-vertical"></li>

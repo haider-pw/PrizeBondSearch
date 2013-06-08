@@ -10,7 +10,7 @@ class MY_Controller extends CI_Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->load->model('CommonModel');
+        $this->load->model('common_model');
     }
 
     function get_LeftMenus(){

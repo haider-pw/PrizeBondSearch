@@ -31,7 +31,7 @@ if (!function_exists('checkuserrole'))
             $where = array(
                 'GroupID' => '1'
             );
-            $data = $ci->CommonModel->get('pbs_Users',$where);
+            $data = $ci->common_model->get('pbs_Users',$where);
             foreach($data->result() as $vari)
             {
                 $groupsids[] = $vari->GroupID;

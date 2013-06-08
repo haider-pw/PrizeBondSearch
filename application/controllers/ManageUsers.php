@@ -11,11 +11,11 @@ class ManageUsers extends Frontend_Controller
     protected $_timestamp = 'today';
     function __construct(){
         parent::__construct();
-        $this->load->model('CommonModel');
+        $this->load->model('common_model');
     }
 
     function CheckUsername($username){
-        $u =$this->CommonModel->get('PBS_Users',array('Username' => $username));
+        $u =$this->common_model->get('PBS_Users',array('Username' => $username));
         $data['users'] = $u;
 
         if(array_key_exists(0,$data['users']))
@@ -32,14 +32,14 @@ class ManageUsers extends Frontend_Controller
         if($_POST && $_POST!=''){
 /*            $where=array(
                 'Username' => $_POST['Username'],
-                'Password' => $this->CommonModel->hash($_POST['Password'])
+                'Password' => $this->common_model->hash($_POST['Password'])
             );*/
 
                     $where=array(
                         'Username' => $_POST['Username'],
                         'Password' => $_POST['Password']
                     );
-           $result= $this->CommonModel->login($where);
+           $result= $this->common_model->login($where);
             if ($result===TRUE){
                 echo 'success:::You Have Been Logged In Correctly.';
             }
@@ -51,7 +51,7 @@ class ManageUsers extends Frontend_Controller
     }
 
     function logout(){
-        $this->CommonModel->logout();
+        $this->common_model->logout();
     }
     function isLoggedIn(){
         if($this->session->userdata('LoggedIn')){
@@ -60,7 +60,7 @@ class ManageUsers extends Frontend_Controller
         else{
             echo '2';
         }
-/*        $result=$this->CommonModel->loggedin();
+/*        $result=$this->common_model->loggedin();
         if($result==TRUE){
             echo 'Hello';
         }
@@ -84,7 +84,7 @@ class ManageUsers extends Frontend_Controller
                 'RegistrationDate' => $this->_timestamp,
                 'LastLogin' => $this->_timestamp
             );
-            $u['users'] =$this->CommonModel->get('PBS_Users',array('Username' => $_POST['username']));
+            $u['users'] =$this->common_model->get('PBS_Users',array('Username' => $_POST['username']));
                 //this checks if username already exist.
             if(array_key_exists(0,$u['users']))
             {
@@ -93,7 +93,7 @@ class ManageUsers extends Frontend_Controller
             else {
 
                 //this checks if email already exist.
-                $u['emails'] =$this->CommonModel->get('PBS_Users',array('Username' => $_POST['username']));
+                $u['emails'] =$this->common_model->get('PBS_Users',array('Username' => $_POST['username']));
                 if(array_key_exists(0,$u['emails']))
                 {
                     echo "error::: Email Already Exist";
@@ -101,7 +101,7 @@ class ManageUsers extends Frontend_Controller
                 else
                 {
                     //if username and email don't exist, then insert new record.
-                    $result=$this->CommonModel->insert($table, $data);
+                    $result=$this->common_model->insert($table, $data);
                     if($result==0){
                         echo 'error:::There is some Problem in Creating your Account.';
                     }

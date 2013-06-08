@@ -1,5 +1,5 @@
 <?php
-if($this->CommonModel->loggedin()!=TRUE){
+if($this->common_model->loggedin()!=TRUE){
     ?>
 <li class="dropdown">
     <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>

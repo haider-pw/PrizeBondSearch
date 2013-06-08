@@ -16,7 +16,7 @@ if(LoggedIn()){
     );
     $columns='GroupID';
     //Getting the Group for the Specific User
-    $data = $this->CommonModel->get_by($columns,'pbs_users', $where, TRUE);
+    $data = $this->common_model->get_by($columns,'pbs_users', $where, TRUE);
     $UserGroup = $data['GroupID'];
 
     //Get The Forms Related To The User Group
@@ -32,7 +32,7 @@ if(LoggedIn()){
     $where=array(
         'GroupID' => $UserGroup
     );
-    $GetForms=$this->CommonModel->get_by_join($columns,$PTable,$joins,$where);
+    $GetForms=$this->common_model->get_by_join($columns,$PTable,$joins,$where);
 
     foreach($GetForms as $key => $row){
         //list($NavBar, $MainMenu, $SubMenu) = explode("/", $row['FormPath']);

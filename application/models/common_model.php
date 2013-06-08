@@ -6,7 +6,7 @@
  * Time: 3:34 PM
  * To change this template use File | Settings | File Templates.
  */
-class CommonModel extends MY_Model
+class common_model extends MY_Model
 {
 
     function __construct(){
