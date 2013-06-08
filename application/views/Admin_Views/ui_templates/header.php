@@ -39,5 +39,6 @@
     <link type="text/css" rel="stylesheet" href="styles/adam/font-awesome/font-awesome-ie7.min.css"/>
     <![endif]-->
     <script type="text/javascript" src="<?php echo base_url(); ?>scripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>scripts/angular/angular.js"></script>
 </head>
 <body>
