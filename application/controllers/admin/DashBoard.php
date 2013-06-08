@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class DashBoard extends PBS_AdminController {
+class DashBoard extends Backend_Controller {
 
     public function __construct()
     {

@@ -1,14 +1,15 @@
 <?php
 /**
  * Created by JetBrains PhpStorm.
- * User: Kill3rCoder-Lapi
- * Date: 4/16/13
- * Time: 3:14 PM
+ * User: pakistanihaider
+ * Date: 08/06/13
+ * Time: 22:06
  * To change this template use File | Settings | File Templates.
  */
 
-class PBS_AdminController extends CI_Controller{
-    function __construct(){
+class Backend_Controller extends MY_Controller
+{
+    public function __construct(){
         parent::__construct();
     }
 }
