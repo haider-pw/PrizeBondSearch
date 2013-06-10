@@ -59,7 +59,8 @@
 <script src="scripts/libs/flot/jquery.flot.resize.js"></script>
 <script src="scripts/libs/fullcalendar.min.js"></script>
 
-
+<?php //Js file to make this site Single Page Application ?>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/angular/PBS.js"></script>
 
 
 
@@ -70,9 +71,8 @@
 <script type="text/javascript">
     $(function() {
         dashboard();
-
-
     });
 </script>
+
 </body>
 </html>

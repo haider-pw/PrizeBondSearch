@@ -8,11 +8,11 @@
  */
 ?>
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7">   <![endif]-->
-<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8">          <![endif]-->
-<!--[if IE 8]>          <html class="no-js lt-ie9">                 <![endif]-->
-<!--[if gt IE 8]><!-->  <html class="no-js">
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7"  ng-app="PBS">   <![endif]-->
+<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8"  ng-app="PBS">          <![endif]-->
+<!--[if IE 8]>          <html class="no-js lt-ie9"  ng-app="PBS">                 <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js"  ng-app="PBS">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -39,6 +39,8 @@
     <link type="text/css" rel="stylesheet" href="styles/adam/font-awesome/font-awesome-ie7.min.css"/>
     <![endif]-->
     <script type="text/javascript" src="<?php echo base_url(); ?>scripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <?php //Included AngularJS file ?>
     <script type="text/javascript" src="<?php echo base_url(); ?>scripts/angular/angular.js"></script>
 </head>
-<body>
+<body ng-controller="AdminAppController">

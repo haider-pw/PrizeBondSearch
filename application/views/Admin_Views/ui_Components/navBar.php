@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="index.html">PBS Admin</a>
+            <a class="brand" href="<?php echo base_url(); ?>admin#/Dashboard/">PBS Admin</a>
             <!-- .topnav -->
             <div class="btn-toolbar topnav">
                 <div class="btn-group">
@@ -53,7 +53,7 @@
             <div class="nav-collapse collapse">
                 <!-- .nav -->
                 <ul class="nav">
-                    <li class="active"><a href="index.html">System</a></li>
+                    <li class="{active: slug == 'system'}"><a href="<?php echo base_url(); ?>admin#/system">System</a></li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             Users <b class="caret"></b>
